@@ -1,6 +1,7 @@
 # Sloughi
-
-![Crates.io](https://img.shields.io/crates/v/sloughi)
+[![Crates.io](https://img.shields.io/crates/v/sloughi?color=green)](https://crates.io/crates/sloughi)
+![Crates.io](https://img.shields.io/crates/l/sloughi)
+![Crates.io](https://img.shields.io/crates/d/sloughi?color=green)
 
 <img align="right" width="180" alt="Sloughi Dog" src="https://user-images.githubusercontent.com/983020/160320457-6dbdd901-01c4-4cd0-8d3c-c758cb4f615b.jpeg" />
 
