@@ -1,21 +1,16 @@
 [package]
 name = "sloughi"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2021"
 repository = "https://github.com/01walid/sloughi"
 homepage = "https://github.com/01walid/sloughi"
 readme = "README.md"
-description = "A tiny, no dependencies, zero-setup crate to make it easy to share and apply git hooks for Rust projects"
+description = "A tiny, no-dependencies crate to make it easy to share and apply git hooks for Rust projects"
 license = "Apache-2.0"
 authors = ["Walid Ziouche <hi@walid.dev>"]
-keywords = ["git", "hook", "hooks", "dev", "workflow"]
+keywords = ["git", "hook", "hooks", "husky", "workflow"]
 categories = ["development-tools"]
-rust-version = "1.59"
-exclude = ["assets/*"]
-
 
 [lib]
 name = "sloughi"
 crate-type = ["lib"]
-
-# build = "build.rs"

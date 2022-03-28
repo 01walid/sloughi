@@ -1,5 +1,5 @@
 use std::{
-    env, fs, io,
+    fs, io,
     path::{Path, PathBuf},
     process::{Command, ExitStatus},
 };
@@ -46,7 +46,8 @@ impl Sloughi {
 
         fs::create_dir_all(self._sloughi_script_abs_dir(repo_path.as_str()))?;
         fs::write(
-            self._sloughi_script_abs_dir(repo_path.as_str()).join(".gitignore"),
+            self._sloughi_script_abs_dir(repo_path.as_str())
+                .join(".gitignore"),
             "*",
         )
         .map_err(|err| {
@@ -56,7 +57,11 @@ impl Sloughi {
 
         fs::write(
             self._hooks_abs_dir(repo_path.as_str()).join("pre-commit"),
-            "just for trkk",
+            r#"#!/bin/sh
+. "$(dirname "$0")/_/sloughi.sh"
+
+echo "Running Sloughi pre-commit..."
+"#,
         )
         .map_err(|err| {
             println!("cargo:warning=Could not write to pre-commit file!\n");
@@ -64,7 +69,8 @@ impl Sloughi {
         })?;
 
         fs::write(
-            self._sloughi_script_abs_dir(repo_path.as_str()).join("sloughi.sh"),
+            self._sloughi_script_abs_dir(repo_path.as_str())
+                .join("sloughi.sh"),
             r#"#!/usr/bin/env sh
 
 if [ -z "$sloughi_skip_init" ]; then

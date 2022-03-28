@@ -18,7 +18,7 @@ A tiny crate to make it easy to share and apply Git hooks for Rust projects. Ins
 
   ```toml
   [build-dependencies]
-  sloughi = "0.2.0"
+  sloughi = "0.3.0"
   ```
 - Create a `build.rs` file at the root of your project to install Sloughi (besides `Cargo.toml`, not inside `src/`):
 
